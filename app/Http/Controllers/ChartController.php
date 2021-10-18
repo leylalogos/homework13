@@ -29,14 +29,18 @@ class ChartController extends Controller
     //last posts for last user
     public function showLastUserPost()
     {
-        $lastuser=User::orderBy('id','desc')->first();
+        $lastuser = User::orderBy('id', 'desc')->first();
         $posts = $lastuser->posts()->limit(5)->get();
         return View('lastuser')->with('posts', $posts);
-
     }
-    public function showPost(){
-        $posts=Post::paginate(7);
+    public function showPost()
+    {
+        $posts = Post::paginate(7);
         return View('posts')->with('posts', $posts);
-
+    }
+    public function showUser()
+    {
+        $users= User::all();
+        return View('user')->with('users', $users);
     }
 }
