@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.admin');
-});
+Route::view('/','dashboard')->name('dashboard');
+Route::get('chart','ChartController@index')->name('chart');
