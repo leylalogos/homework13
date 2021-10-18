@@ -10,12 +10,10 @@
         $(function() {
 
             const labels = [
-                'January',
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
+
+                @foreach ($postcount as $shamsi => $count)
+                    '{{ $shamsi }}',
+                @endforeach
             ];
             const data = {
                 labels: labels,
@@ -24,20 +22,27 @@
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: [
-                        {{ $postcount[0] }},
-                        {{ $postcount[1] }},
-                        {{ $postcount[2] }},
-                        {{ $postcount[3] }},
-                        {{ $postcount[4] }},
-                        {{ $postcount[5] }},
-                        {{ $postcount[6] }},
+                        @foreach ($postcount as $count)
+                            {{ $count }},
+                        @endforeach
                     ],
                 }]
             };
             var config = {
                 type: 'line',
                 data: data,
-                options: {}
+                options: {
+                    scales: {
+                        y: {
+                            // max: 5,
+                            // min: 0,
+                            ticks: {
+                                stepSize: 1
+                            },
+                            beginAtZero:true
+                        }
+                    }
+                }
             };
             var myChart = new Chart(
                 document.getElementById('lineChart'),
@@ -50,7 +55,7 @@
 
     <!-- LINE CHART -->
     <div class="row justify-content-center mt-4">
-        <div class="col-6">
+        <div class="col-8">
             <div class="card card-info">
                 <div class="card-header">
                     <h3 class="card-title">نمودار خطی</h3>
