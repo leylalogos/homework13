@@ -20,10 +20,18 @@
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'My First dataset',
+                    label: 'پست های هفت روز اخیر',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: [0, 10, 5, 2, 20, 30, 45],
+                    data: [
+                        {{ $postcount[0] }},
+                        {{ $postcount[1] }},
+                        {{ $postcount[2] }},
+                        {{ $postcount[3] }},
+                        {{ $postcount[4] }},
+                        {{ $postcount[5] }},
+                        {{ $postcount[6] }},
+                    ],
                 }]
             };
             var config = {
@@ -41,22 +49,27 @@
     </script>
 
     <!-- LINE CHART -->
-    <div class="card card-info">
-        <div class="card-header">
-            <h3 class="card-title">نمودار خطی</h3>
+    <div class="row justify-content-center mt-4">
+        <div class="col-6">
+            <div class="card card-info">
+                <div class="card-header">
+                    <h3 class="card-title">نمودار خطی</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-widget="remove"><i
+                                class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="lineChart" style="height:250px"></canvas>
+                    </div>
+                </div>
+                <!-- /.card-body -->
             </div>
         </div>
-        <div class="card-body">
-            <div class="chart">
-                <canvas id="lineChart" style="height:250px"></canvas>
-            </div>
-        </div>
-        <!-- /.card-body -->
     </div>
     <!-- /.card -->
 @stop
