@@ -82,10 +82,10 @@
                             data-accordion="false">
 
                             @include('navbar-item',["navbar_title"=>"داشبورد",'routeName'=>'dashboard'])
-                            @include('navbar-item',['navbar_title'=>'اخرین مطالب','routeName'=>'dashboard'])
+                            @include('navbar-item',['navbar_title'=>'اخرین مطالب','routeName'=>'chart'])
                             @include('navbar-item',['navbar_title'=>'کاربران','routeName'=>'dashboard'])
                             @include('navbar-item',['navbar_title'=>'پست ها','routeName'=>'dashboard'])
-                            @include('navbar-item',['navbar_title'=>'پست های آخرین کاربر','routeName'=>'chart'])
+                            @include('navbar-item',['navbar_title'=>'پست های آخرین کاربر','routeName'=>'lastuser'])
                     </nav>
         </aside>
         <div class="content-wrapper">

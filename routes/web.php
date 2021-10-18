@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','dashboard')->name('dashboard');
 Route::get('chart','ChartController@index')->name('chart');
+Route::get('lastuser','ChartController@showLastUserPost')->name('lastuser');
+Route::get('posts','ChartController@showPost')->name('post');
