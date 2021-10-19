@@ -38,6 +38,9 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">تماس</a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{route('login')}}" class="nav-link">ورود اعضا</a>
+                </li>
             </ul>
 
             <!-- SEARCH FORM -->
